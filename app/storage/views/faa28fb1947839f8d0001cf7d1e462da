@@ -1,0 +1,78 @@
+<!-- app/view/login.blade.php -->
+
+
+<?php $__env->startSection('content'); ?>
+    <?php echo Form::open(array('url' => '/register')); ?>
+
+
+        <h1>Registration</h1>
+
+        <!-- Shows login errors if any-->
+        <p>
+        <?php echo $errors->first('email'); ?>
+
+        <?php echo $errors->first('password'); ?>
+
+        <?php echo $errors->first('username'); ?>
+
+        <?php echo $errors->first('first_name'); ?>
+
+        <?php echo $errors->first('surname'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('username', 'Username'); ?>
+
+        <?php echo Form::text('username', Input::old('username'), array('placeholder' => 'jsmith')); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('password', 'Password'); ?>
+
+        <?php echo Form::password('password'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('retype_password', 'Retype Password'); ?>
+
+        <?php echo Form::password('retype_password'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('email', 'Email'); ?>
+
+        <?php echo Form::email('email'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('retype_email', 'Retype Email'); ?>
+
+        <?php echo Form::email('retype_email'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('first_name', 'First Name'); ?>
+
+        <?php echo Form::text('first_name', Input::old('first_name'), array('placeholder' => 'John')); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('surname', 'Surname'); ?>
+
+        <?php echo Form::text('surname', Input::old('surname'), array('placeholder' => 'Smith')); ?>
+
+        </p>
+
+        <p><?php echo Form::submit('Submit'); ?></p>
+
+    <?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,20 @@
+<?php $__env->startSection('content'); ?>
+
+	<h1>
+        Welcome to my blog!
+	</h1>
+
+
+        <?php foreach($posts as $post): ?>
+        <h2><?php echo $post->title; ?> <br></h2>
+        <?php echo $post->user->username; ?> <br>
+        <p><?php echo substr($post->body, 0, 140)."..."; ?> <br></p>
+        <a href="<?php echo URL::to('comment/'.$post->id); ?> ">Read More</a>
+        <?php endforeach; ?>
+
+
+
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

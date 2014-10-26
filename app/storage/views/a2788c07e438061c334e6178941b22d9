@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <?php $__env->startSection('sidebar'); ?>
+            <a href="<?php echo URL::to('/'); ?> ">Home</a>
+            <?php if(Auth::check()): ?>
+            <a href="<?php echo URL::to('logout'); ?>">Logout</a>
+            <a href="<?php echo URL::to('post'); ?>">Post</a>
+            <?php else: ?>
+            <a href="<?php echo URL::to('login'); ?>">Login</a>
+            <a href="<?php echo URL::to('register'); ?>">Register</a>
+            <?php endif; ?>
+        <?php echo $__env->yieldSection(); ?>
+
+        <div class="container">
+            <?php echo $__env->yieldContent('content'); ?>
+        </div>
+    </body>
+</html>

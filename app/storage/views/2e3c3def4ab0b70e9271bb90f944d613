@@ -1,0 +1,45 @@
+<!document html>
+
+<?php $__env->startSection('content'); ?>
+
+    <?php echo Form::open(array('url' => 'comment/'.$posts->id)); ?>
+
+
+    <h1>
+        <?php echo $posts->title; ?>
+
+    </h1>
+
+    <p>
+        <?php echo $errors->first('title'); ?>
+
+        <?php echo $errors->first('body'); ?>
+
+    </p>
+
+    <p>
+        <?php echo $posts->body; ?>
+
+    </p>
+
+    <p>
+        <?php foreach($posts->comments as $comment): ?>
+            <?php echo $comment->user->username; ?> <br>
+            <?php echo $comment->body; ?> <br>
+        <?php endforeach; ?>
+    </p>
+
+    <p>
+        <?php echo Form::label('comment', 'Comment'); ?>
+
+        <?php echo Form::text('comment'); ?>
+
+    </p>
+
+<p><?php echo Form::submit('Submit'); ?></p>
+
+<?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

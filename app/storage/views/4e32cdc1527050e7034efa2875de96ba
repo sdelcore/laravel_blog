@@ -1,0 +1,38 @@
+<!-- app/view/login.blade.php -->
+
+
+<?php $__env->startSection('content'); ?>
+
+    <?php echo Form::open(array('url' => 'login')); ?>
+
+
+        <h1>Login</h1>
+
+        <p>
+            <?php echo $errors->first('email'); ?>
+
+            <?php echo $errors->first('password'); ?>
+
+        </p>
+
+        <p>
+            <?php echo Form::label('username', 'Username'); ?>
+
+            <?php echo Form::text('username', Input::old('username'), array('placeholder' => 'jsmith')); ?>
+
+        </p>
+
+        <p>
+            <?php echo Form::label('password', 'Password'); ?>
+
+            <?php echo Form::password('password'); ?>
+
+        </p>
+
+        <p><?php echo Form::submit('Submit!'); ?></p>
+
+    <?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

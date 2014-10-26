@@ -1,0 +1,34 @@
+<?php $__env->startSection('content'); ?>
+    <?php echo Form::open(array('url' => 'post')); ?>
+
+        <h1>Post</h1>
+
+        <!-- Shows login errors if any-->
+        <p>
+        <?php echo $errors->first('title'); ?>
+
+        <?php echo $errors->first('body'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('title', 'Title'); ?>
+
+        <?php echo Form::text('title'); ?>
+
+        </p>
+
+        <p>
+        <?php echo Form::label('body', 'Body'); ?>
+
+        <?php echo Form::text('body'); ?>
+
+        </p>
+
+        <p><?php echo Form::submit('Submit'); ?></p>
+
+    <?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
