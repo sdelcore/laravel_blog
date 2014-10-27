@@ -1,0 +1,130 @@
+body{
+    margin:0px;
+    background:#ffffff;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+
+}
+#header {
+    height:60px;
+    background:grey;
+    margin:auto;
+    colour: white;
+    font-size:xx-large;
+    font-weight: bolder;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding-top:10px;
+    padding-botton:0px;
+    position:fixed;
+    top:0px;
+    width:100%;
+}
+.container {
+    width:960px;
+    background: #F0F0F0;
+    border: 1px solid #CCC;
+    height: auto;
+    margin: 20px auto;
+    color: #000;
+    padding-bottom:5px;
+    padding-left:25px;
+    padding-top:5px;
+    margin-top:90px;
+    margin-bottom:20px;
+    display:inline-block;
+    text-align:left;
+}
+a {
+    text-decoration:none;
+}
+a:link, a:visited, a:hover, a:active {
+    color: whitesmoke;
+}
+.nav_link{
+    padding-right: 25px;
+    padding-left: 25px;
+}
+#welcome{
+    padding-left:15px;
+    float: left;
+    color:white;
+}
+#nav{
+    float: right;
+    font-size: medium;
+    padding-top:10;
+}
+#home_post_title{
+    padding-top:15px;
+    padding-botton:0px;
+    font-size: 2em;
+    font-weight: 500;
+}
+.username{
+    margin-top:0px;
+    font-style: italic;
+    font-size: small;
+    text-align:left;
+}
+#home_post_body{
+    padding-left:50px;
+    padding-right:50px;
+    font-size: medium;
+}
+#home_read_more{
+    float:right;
+    padding-right:50px;
+    color:darkblue;
+}
+.titles{
+    font-size: 2em;
+    font-weight: 500;
+    text-align:center;
+    padding-top:15px;
+}
+.entry_labels{
+    text-align:center;
+}
+#post_body{
+    margin-left:75px;
+    margin-right:75px;
+    padding-bottom:20px;
+    margin-top: 55px;
+}
+.post_info{
+    float: right;
+    font-size: small;
+    font-style: italic;
+    margin-right: 34px;
+    padding-bottom:20px;
+}
+#comment_user{
+    border-style:double;
+    text-align:center;
+    padding-left:2px;
+    width:920px;
+}
+#comment_body{
+    text-align:left;
+    padding-left:15px;
+}
+#comment{
+    border-radius: 2px;
+    resize:none;
+    width: 927px;
+    height: 200px;
+}
+#title{
+    resize:none;
+    width:927;
+    height:20px;
+    padding-top:2px;
+}
+#body{
+    resize:none;
+    width: 927px;
+    height: 200px;
+    padding-top:2px;
+}
+
+

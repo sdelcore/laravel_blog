@@ -1,15 +1,30 @@
 <html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:900,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <?php echo HTML::style('css/main.css');; ?>
+
+</head>
     <body>
-        <?php $__env->startSection('sidebar'); ?>
-            <a href="<?php echo URL::to('/'); ?> ">Home</a>
-            <?php if(Auth::check()): ?>
-            <a href="<?php echo URL::to('logout'); ?>">Logout</a>
-            <a href="<?php echo URL::to('post'); ?>">Post</a>
-            <?php else: ?>
-            <a href="<?php echo URL::to('login'); ?>">Login</a>
-            <a href="<?php echo URL::to('register'); ?>">Register</a>
-            <?php endif; ?>
-        <?php echo $__env->yieldSection(); ?>
+        <div id="header">
+            <?php $__env->startSection('sidebar'); ?>
+                <span id="welcome">
+                    <?php echo Config::get('app.title'); ?>
+
+                </span>
+                <span id="nav">
+                    <a href="<?php echo URL::to('/'); ?> " class="nav_link">HOME</a>
+                    <?php if(Auth::check()): ?>
+                    <a href="<?php echo URL::to('post'); ?>" class="nav_link">POST</a>
+                    <a href="<?php echo URL::to('logout'); ?>" class="nav_link">LOGOUT</a>
+                    <?php else: ?>
+                    <a href="<?php echo URL::to('login'); ?>" class="nav_link">LOGIN</a>
+                    <a href="<?php echo URL::to('register'); ?>" class="nav_link">REGISTER</a>
+                    <?php endif; ?>
+                </span>
+            <?php echo $__env->yieldSection(); ?>
+        </div>
 
         <div class="container">
             <?php echo $__env->yieldContent('content'); ?>

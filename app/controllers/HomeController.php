@@ -20,10 +20,6 @@ class HomeController extends BaseController {
 		return View::make('homepage')->with('posts', Post::paginate(10));
 	}
 
-    public function doWelcome()
-    {
-    }
-
     public function showLogin()
     {
         return View::make('login');
@@ -57,13 +53,14 @@ class HomeController extends BaseController {
             if (Auth::attempt($userdata, true)){
 
                 return Redirect::to('/')
-                    ->with('flash_notice', 'Login Success');
+                    ->with('flash_notice', 'Login Successful');
 
             } else {
 
                 return Redirect::to('login')
+                    ->withErrors($validator)
                     ->with('flash_error', 'Login Failed')
-                    ->withInput();
+                    ->withInput(Input::except('password'));
             }
         }
     }
@@ -107,7 +104,7 @@ class HomeController extends BaseController {
             return Redirect::to('register')
                 ->withErrors($validator)
                 ->withInput(Input::except('password'))
-                ->with('flash_error', 'Registration Failed');;
+                ->with('flash_error', 'Registration Failed');
         }
     }
 

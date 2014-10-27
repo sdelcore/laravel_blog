@@ -4,11 +4,11 @@
 
     <?php echo Form::open(array('url' => 'comment/'.$posts->id)); ?>
 
-
-    <h1>
+    <title><?php echo $posts->title; ?> </title>
+    <div class="titles">
         <?php echo $posts->title; ?>
 
-    </h1>
+    </div>
 
     <p>
         <?php echo $errors->first('title'); ?>
@@ -17,22 +17,33 @@
 
     </p>
 
-    <p>
+    <div class="post_info">
+        <?php echo $posts->user->username; ?> <br/>
+        <?php echo date("d F Y",strtotime($posts->user->created_at)); ?> at <?php echo date("g:ha",strtotime($posts->user->created_at)); ?>
+
+    </div>
+
+    <div id="post_body">
         <?php echo $posts->body; ?>
 
-    </p>
+    </div>
 
     <p>
         <?php foreach($posts->comments as $comment): ?>
-            <?php echo $comment->user->username; ?> <br>
-            <?php echo $comment->body; ?> <br>
+            <div id="comment_user">
+                <div id="comment_body">
+                    <?php echo $comment->body; ?> <br/>
+                </div>
+                <div class="username">
+                    <?php echo $comment->user->username; ?> <br/>
+                </div>
+            </div>
         <?php endforeach; ?>
     </p>
 
     <p>
-        <?php echo Form::label('comment', 'Comment'); ?>
-
-        <?php echo Form::text('comment'); ?>
+        <?php echo Form::label('comment', 'Comment:'); ?><br/>
+        <?php echo Form::textarea('comment'); ?>
 
     </p>
 

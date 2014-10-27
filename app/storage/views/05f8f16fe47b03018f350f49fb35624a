@@ -1,15 +1,27 @@
 <?php $__env->startSection('content'); ?>
+        <title>My Blog</title>
+        <div>
+            <?php echo Session::get('flash_notice'); ?>
 
-	<h1>
-        Welcome to my blog!
-	</h1>
-
-
+        </div>
         <?php foreach($posts as $post): ?>
-        <h2><?php echo $post->title; ?> <br></h2>
-        <?php echo $post->user->username; ?> <br>
-        <p><?php echo substr($post->body, 0, 140)."..."; ?> <br></p>
-        <a href="<?php echo URL::to('comment/'.$post->id); ?> ">Read More</a>
+        <div id="home_post_title">
+            <?php echo $post->title; ?> <br/>
+        </div>
+        <div class="username">
+            <?php echo $post->user->username; ?> <br/>
+        </div>
+        <p id="home_post_body">
+            <?php if(strlen($post->body) > 140): ?>
+                <?php echo substr($post->body, 0, 140)."..."; ?>
+
+            <?php else: ?>
+                <?php echo $post->body; ?>
+
+            <?php endif; ?> <br/>
+        </p>
+        <a href="<?php echo URL::to('comment/'.$post->id); ?> " id="home_read_more">Read More</a> <br/>
+        <hr/>
         <?php endforeach; ?>
 
 

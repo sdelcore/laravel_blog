@@ -2,37 +2,36 @@
 
 
 <?php $__env->startSection('content'); ?>
-
     <?php echo Form::open(array('url' => 'login')); ?>
 
+            <title>Login</title>
 
-        <h1>Login</h1>
+            <div class="titles">Login</div>
 
-        <p>
-            <?php echo $errors->first('email'); ?>
+            <div>
+                <?php echo $errors->first('username'); ?>
 
-            <?php echo $errors->first('password'); ?>
+                <?php echo $errors->first('password'); ?>
 
-        </p>
+                <?php echo Session::get('flash_error'); ?>
 
-        <p>
-            <?php echo Form::label('username', 'Username'); ?>
+            </div>
 
-            <?php echo Form::text('username', Input::old('username'), array('placeholder' => 'jsmith')); ?>
+            <p>
+                <?php echo Form::label('username', 'Username:'); ?><br/>
+                <?php echo Form::text('username', Input::old('username')); ?>
 
-        </p>
+            </p>
 
-        <p>
-            <?php echo Form::label('password', 'Password'); ?>
+            <p>
+                <?php echo Form::label('password', 'Password:'); ?><br/>
+                <?php echo Form::password('password'); ?>
 
-            <?php echo Form::password('password'); ?>
+            </p>
 
-        </p>
-
-        <p><?php echo Form::submit('Submit!'); ?></p>
-
+            <p><?php echo Form::submit('Login!'); ?></p>
     <?php echo Form::close(); ?>
 
-
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

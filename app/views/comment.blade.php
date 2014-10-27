@@ -3,30 +3,41 @@
 @section('content')
 
     {{ Form::open(array('url' => 'comment/'.$posts->id)) }}
-
-    <h1>
+    <title>{{ $posts->title}} </title>
+    <div class="titles">
         {{ $posts->title }}
-    </h1>
+    </div>
 
     <p>
         {{ $errors->first('title') }}
         {{ $errors->first('body') }}
     </p>
 
-    <p>
+    <div class="post_info">
+        {{ $posts->user->username }} <br/>
+        {{ date("d F Y",strtotime($posts->user->created_at)) }} at {{ date("g:ha",strtotime($posts->user->created_at)) }}
+    </div>
+
+    <div id="post_body">
         {{ $posts->body }}
-    </p>
+    </div>
 
     <p>
         @foreach($posts->comments as $comment)
-            {{$comment->user->username}} <br>
-            {{$comment->body}} <br>
+            <div id="comment_user">
+                <div id="comment_body">
+                    {{$comment->body}} <br/>
+                </div>
+                <div class="username">
+                    {{$comment->user->username}} <br/>
+                </div>
+            </div>
         @endforeach
     </p>
 
     <p>
-        {{ Form::label('comment', 'Comment')}}
-        {{ Form::text('comment') }}
+        {{ Form::label('comment', 'Comment:')}}<br/>
+        {{ Form::textarea('comment') }}
     </p>
 
 <p>{{ Form::submit('Submit') }}</p>

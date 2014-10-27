@@ -2,28 +2,27 @@
 
 @extends('layout')
 @section('content')
-
     {{ Form::open(array('url' => 'login')) }}
+            <title>Login</title>
 
-        <h1>Login</h1>
+            <div class="titles">Login</div>
 
-        <p>
-            {{ $errors->first('email') }}
-            {{ $errors->first('password') }}
-        </p>
+            <div>
+                {{ $errors->first('username') }}
+                {{ $errors->first('password') }}
+                {{ Session::get('flash_error') }}
+            </div>
 
-        <p>
-            {{ Form::label('username', 'Username')}}
-            {{ Form::text('username', Input::old('username'), array('placeholder' => 'jsmith')) }}
-        </p>
+            <p>
+                {{ Form::label('username', 'Username:')}}<br/>
+                {{ Form::text('username', Input::old('username')) }}
+            </p>
 
-        <p>
-            {{ Form::label('password', 'Password') }}
-            {{ Form::password('password') }}
-        </p>
+            <p>
+                {{ Form::label('password', 'Password:') }}<br/>
+                {{ Form::password('password') }}
+            </p>
 
-        <p>{{ Form::submit('Submit!') }}</p>
-
+            <p>{{ Form::submit('Login!') }}</p>
     {{ Form::close() }}
-
 @stop

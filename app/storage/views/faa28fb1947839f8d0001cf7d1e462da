@@ -4,8 +4,9 @@
 <?php $__env->startSection('content'); ?>
     <?php echo Form::open(array('url' => '/register')); ?>
 
+        <title>Registration</title>
 
-        <h1>Registration</h1>
+        <div class="titles">Registration</div>
 
         <!-- Shows login errors if any-->
         <p>
@@ -22,55 +23,48 @@
         </p>
 
         <p>
-        <?php echo Form::label('username', 'Username'); ?>
-
+        <?php echo Form::label('username', 'Username:'); ?> <br/>
         <?php echo Form::text('username', Input::old('username'), array('placeholder' => 'jsmith')); ?>
 
         </p>
 
         <p>
-        <?php echo Form::label('password', 'Password'); ?>
-
+        <?php echo Form::label('password', 'Password:'); ?><br/>
         <?php echo Form::password('password'); ?>
 
         </p>
 
         <p>
-        <?php echo Form::label('retype_password', 'Retype Password'); ?>
-
+        <?php echo Form::label('retype_password', 'Retype Password:'); ?><br/>
         <?php echo Form::password('retype_password'); ?>
 
         </p>
 
         <p>
-        <?php echo Form::label('email', 'Email'); ?>
-
+        <?php echo Form::label('email', 'Email:'); ?><br/>
         <?php echo Form::email('email'); ?>
 
         </p>
 
         <p>
-        <?php echo Form::label('retype_email', 'Retype Email'); ?>
-
+        <?php echo Form::label('retype_email', 'Retype Email:'); ?><br/>
         <?php echo Form::email('retype_email'); ?>
 
         </p>
 
         <p>
-        <?php echo Form::label('first_name', 'First Name'); ?>
-
+        <?php echo Form::label('first_name', 'First Name:'); ?><br/>
         <?php echo Form::text('first_name', Input::old('first_name'), array('placeholder' => 'John')); ?>
 
         </p>
 
         <p>
-        <?php echo Form::label('surname', 'Surname'); ?>
-
+        <?php echo Form::label('surname', 'Surname:'); ?><br/>
         <?php echo Form::text('surname', Input::old('surname'), array('placeholder' => 'Smith')); ?>
 
         </p>
 
-        <p><?php echo Form::submit('Submit'); ?></p>
+        <p><?php echo Form::submit('Register!'); ?></p>
 
     <?php echo Form::close(); ?>
 

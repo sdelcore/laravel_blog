@@ -1,7 +1,8 @@
 <?php $__env->startSection('content'); ?>
     <?php echo Form::open(array('url' => 'post')); ?>
 
-        <h1>Post</h1>
+        <title>Create a Post</title>
+        <div class='titles'>Create a Post</div>
 
         <!-- Shows login errors if any-->
         <p>
@@ -11,17 +12,15 @@
 
         </p>
 
+        <div>
+        <?php echo Form::label('title', 'Title:'); ?><br/>
+        <?php echo Form::textarea('title'); ?>
+
+        </div>
+
         <p>
-        <?php echo Form::label('title', 'Title'); ?>
-
-        <?php echo Form::text('title'); ?>
-
-        </p>
-
-        <p>
-        <?php echo Form::label('body', 'Body'); ?>
-
-        <?php echo Form::text('body'); ?>
+        <?php echo Form::label('body', 'Body:'); ?><br/>
+        <?php echo Form::textarea('body'); ?>
 
         </p>
 
