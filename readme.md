@@ -2,4 +2,4 @@
 
 This is a simple blog that allows users to register, login, post, and comment.
 
-##Last Updated October 2014
+## Last Updated October 2014
